@@ -8,6 +8,10 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  & img {
+    display: block;
+    margin: auto;
+  }
   & input[type='text'],
   input[type='password'] {
     width: 100%;
