@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
-type SortableFunction = (name: string) => void;
+export type SortableFunction = (name: string) => void;
 
 export interface PropsTableData {
   data?: string[];

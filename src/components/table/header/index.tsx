@@ -1,6 +1,6 @@
 import { ConfigSort } from 'hooks/useSortableData';
 import React from 'react';
-import { NormalizeData, PropsHeader } from 'types/tables';
+import { NormalizeData, PropsHeader, SortableFunction } from 'types/tables';
 
 interface Props extends PropsHeader {
   sortConfig?: ConfigSort | null;
@@ -8,10 +8,10 @@ interface Props extends PropsHeader {
 
 const thRender = (
   value: NormalizeData,
-  onChange: any,
+  onChange: SortableFunction | null,
   direction = 'ascending',
 ) => (
-  <th key={value.key} onClick={() => onChange(value.key)}>
+  <th key={value.key} onClick={() => (onChange ? onChange(value.key) : null)}>
     {value.name}
     {value.isSortable && direction === 'ascending'
       ? arrowUp()
@@ -28,7 +28,7 @@ const Header: React.FC<Props> = ({ data, onChange, sortConfig }) => (
     <tr>
       {data &&
         data.map((item: NormalizeData) =>
-          thRender(item, onChange, sortConfig?.direction),
+          thRender(item, onChange || null, sortConfig?.direction),
         )}
     </tr>
   </>
