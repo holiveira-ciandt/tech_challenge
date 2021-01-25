@@ -1,14 +1,13 @@
 import React from 'react';
 import { PropsTableData } from 'types/tables';
-// import { PropsTableData } from 'types/tables';
-
-// import { Container } from './styles';
 
 const trRender = (bodyElements: string[]) => (
-  <tr>{bodyElements.map(item => tdRender(item))}</tr>
+  <tr>{bodyElements.map((item, idx) => Cell(item, idx))}</tr>
 );
 
-const tdRender = (item: string) => <td>{item}</td>;
+const Cell = (item: string, idx: number) => (
+  <td key={`${item}-${idx}`}>{item}</td>
+);
 
 const Body: React.FC<PropsTableData> = ({ data }) => (
   <>{data && trRender(data)}</>
