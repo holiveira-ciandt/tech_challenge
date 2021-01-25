@@ -3,6 +3,7 @@ import useApiFetch from 'hooks/useApi';
 import Table from 'components/table';
 import { NormalizeData } from 'types/tables';
 import Settings from 'settings';
+import { Songs } from 'types/songs';
 
 const SongReport: React.FC = () => {
   const [results] = useApiFetch(Settings.endpointURL);
@@ -31,10 +32,58 @@ const SongReport: React.FC = () => {
     { name: 'MetricP', key: 'metricP' },
     { name: 'Play Count', key: 'playCount' },
   ];
+
+  const filterResults = (data: Songs[]) =>
+    data.map((item: Songs) => {
+      const {
+        song,
+        artist,
+        songReleaseDate,
+        metricA,
+        metricB,
+        metricC,
+        metricD,
+        metricE,
+        metricF,
+        metricG,
+        metricH,
+        metricI,
+        metricJ,
+        metricK,
+        metricL,
+        metricM,
+        metricN,
+        metricO,
+        metricP,
+      } = item;
+      return {
+        song,
+        artist,
+        songReleaseDate,
+        metricA,
+        metricB,
+        metricC,
+        metricD,
+        metricE,
+        metricF,
+        metricG,
+        metricH,
+        metricI,
+        metricJ,
+        metricK,
+        metricL,
+        metricM,
+        metricN,
+        metricO,
+        metricP,
+      } as Songs;
+    });
   return (
     <>
       <div>
-        {results?.length && <Table headers={headers} values={results} />}
+        {results?.length && (
+          <Table headers={headers} values={filterResults(results)} />
+        )}
       </div>
     </>
   );
