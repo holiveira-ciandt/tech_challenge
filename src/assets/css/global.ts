@@ -33,6 +33,7 @@ const GlobalStyle = createGlobalStyle<Props>`
   background-color: ${props => props.theme.colors.persianGreen};
   color: white;
   font-size: ${props => props.theme.fontSizes.small};
+  cursor: pointer;
   }
   td {
     font-size: ${props => props.theme.fontSizes.smaller};
