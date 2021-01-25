@@ -29,8 +29,15 @@ const SongReport: React.FC = () => {
     { name: 'MetricN', key: 'metricN' },
     { name: 'MetricO', key: 'metricO' },
     { name: 'MetricP', key: 'metricP' },
+    { name: 'Play Count', key: 'playCount' },
   ];
-  return <>{results?.length && <Table headers={headers} values={results} />}</>;
+  return (
+    <>
+      <div>
+        {results?.length && <Table headers={headers} values={results} />}
+      </div>
+    </>
+  );
 };
 
 export default SongReport;
