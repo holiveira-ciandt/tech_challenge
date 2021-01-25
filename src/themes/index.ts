@@ -8,6 +8,7 @@ export const defaultTheme = {
   fonts: ['sans-serif', 'Roboto'],
   fontSizes: {
     small: '0.8em',
+    smaller: '0.7em',
     medium: '1em',
     large: '1.2em',
   },

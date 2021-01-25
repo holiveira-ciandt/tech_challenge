@@ -4,6 +4,7 @@ interface fontSizes {
   small: string;
   medium: string;
   large: string;
+  smaller: string;
 }
 
 interface colors {
@@ -31,10 +32,10 @@ const GlobalStyle = createGlobalStyle<Props>`
   text-align: center;
   background-color: ${props => props.theme.colors.persianGreen};
   color: white;
-  font-size: ${props => props.theme.fontSizes.medium};
+  font-size: ${props => props.theme.fontSizes.small};
   }
   td {
-    font-size: ${props => props.theme.fontSizes.small};
+    font-size: ${props => props.theme.fontSizes.smaller};
   }
   td,th {
   border: 1px solid #ddd;
