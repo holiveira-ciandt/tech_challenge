@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const useApiResult = (request: string) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const useApiResult = (request: string): [any[], string | null] => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [results, setResults] = useState<any[]>([]);
   const [error, setError] = useState(null);
