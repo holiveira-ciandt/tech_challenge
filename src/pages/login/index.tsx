@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Settings from 'settings';
