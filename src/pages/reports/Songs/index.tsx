@@ -2,11 +2,10 @@ import React from 'react';
 import useApiFetch from 'hooks/useApi';
 import Table from 'components/table';
 import { NormalizeData } from 'types/tables';
+import Settings from 'settings';
 
-const url =
-  'https://l58tuf2ar5.execute-api.sa-east-1.amazonaws.com/default/get-object-json';
 const SongReport: React.FC = () => {
-  const [results] = useApiFetch(url);
+  const [results] = useApiFetch(Settings.endpointURL);
 
   const headers: NormalizeData[] = [
     { name: 'Song', key: 'song', isSortable: true },
