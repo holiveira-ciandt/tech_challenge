@@ -25,10 +25,12 @@ const arrowDown = () => <span>&#8595;</span>;
 
 const Header: React.FC<Props> = ({ data, onChange, sortConfig }) => (
   <>
-    {data &&
-      data.map((item: NormalizeData) =>
-        thRender(item, onChange, sortConfig?.direction),
-      )}
+    <tr>
+      {data &&
+        data.map((item: NormalizeData) =>
+          thRender(item, onChange, sortConfig?.direction),
+        )}
+    </tr>
   </>
 );
 
