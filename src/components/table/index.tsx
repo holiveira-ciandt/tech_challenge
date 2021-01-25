@@ -1,5 +1,3 @@
-/* eslint-disable no-shadow */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from 'react';
 import TbHeader from 'components/table/header';
 import TbBody from 'components/table/body';
@@ -17,6 +15,7 @@ interface TableData {
 
 export const Table: React.FC<TableData> = ({ values, headers }) => {
   const { width } = useWindows();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [dataSet, setDataSet] = useState<any>([]);
   const { items, requestSort, sortConfig } = useSortableData(values, null);
 
@@ -30,6 +29,7 @@ export const Table: React.FC<TableData> = ({ values, headers }) => {
     setDataSet(items);
   }, [items]);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getBody = (): string[] => dataSet.map((d: any) => Object.values(d));
 
   return (
