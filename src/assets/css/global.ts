@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle<Props>`
     font-size: ${props => props.theme.fontSizes.smaller};
   }
   td,th {
-  border: 1px solid #ddd;
+  //border: 1px solid #ddd;
   padding: 12px;
   }
   tr:hover {
