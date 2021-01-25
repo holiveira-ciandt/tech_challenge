@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useMemo, useState } from 'react';
 
 export interface ConfigSort {
@@ -7,6 +5,7 @@ export interface ConfigSort {
   direction?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const useSortableData = (items: any, config: ConfigSort | null) => {
   const [sortConfig, setSortConfig] = useState(config);
 
