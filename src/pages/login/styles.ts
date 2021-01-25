@@ -21,6 +21,9 @@ export const Container = styled.div`
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
+  & input[type='text']:disabled {
+    background: black;
+  }
   & button {
     background-color: #4caf50;
     color: white;
@@ -29,5 +32,10 @@ export const Container = styled.div`
     border: none;
     cursor: pointer;
     width: 100%;
+  }
+  & button:disabled,
+  button[disabled] {
+    background-color: #cccccc;
+    color: #666666;
   }
 `;
