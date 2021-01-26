@@ -14,7 +14,8 @@ const useApiResult = (request: string): [any[], string | null] => {
     fetch(request)
       .then(async response => {
         if (response.ok) {
-          setResults(await response.json());
+          const res = await response.json();
+          setResults(res.data);
           setError(null);
         } else {
           setError(null);

@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'iheart-music-lab
+
+  IHeart aws-music-lab
+
+  '
+Globals:
+  Function:
+    Timeout: 3
+Resources:
+  SongApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: SongApiFunction
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      Events:
+        SongsReport:
+          Type: HttpApi
+          Properties:
+            Path: /songs
+            Method: get

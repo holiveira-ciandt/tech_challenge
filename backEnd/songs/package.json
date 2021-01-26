@@ -1,0 +1,18 @@
+{
+  "name": "songs",
+  "version": "1.0.0",
+  "description": "Api Songs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node index.js"
+  },
+  "author": "Hugo Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.815.0"
+  }
+}
